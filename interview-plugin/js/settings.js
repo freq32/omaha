@@ -80,5 +80,12 @@ fetch('https://jsonplaceholder.typicode.com/users')
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
   });
+
+  jQuery('#cp div').on("click", function(){
+    jQuery('#cp div').removeClass();
+    jQuery(this).addClass('active');
+    jQuery('.inner, table, #wpbody').css("background-color", "#"+jQuery(this).attr('data-color'));
+    jQuery('.table-container').removeClass().addClass('table-container '+jQuery(this).attr('data-type'));
+  });
 	
 })(jQuery);
