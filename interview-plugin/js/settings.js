@@ -1,7 +1,3 @@
-/* Plugin JS */
-
-(function($) {
-
 fetch('https://jsonplaceholder.typicode.com/users')
   .then(result => result.json())
   .then((output) => {
@@ -79,13 +75,12 @@ fetch('https://jsonplaceholder.typicode.com/users')
     var divContainer = document.getElementById("showData");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
-  });
-
-  jQuery('#cp div').on("click", function(){
-    jQuery('#cp div').removeClass();
-    jQuery(this).addClass('active');
-    jQuery('.inner, table, #wpbody').css("background-color", "#"+jQuery(this).attr('data-color'));
-    jQuery('.table-container').removeClass().addClass('table-container '+jQuery(this).attr('data-type'));
+	
+	jQuery('#cp div').on("click", function(){
+      jQuery('#cp div').removeClass();
+      jQuery(this).addClass('active');
+      jQuery('.inner, table, #wpbody').css("background-color", "#"+jQuery(this).attr('data-color'));
+      jQuery('.table-container').removeClass().addClass('table-container '+jQuery(this).attr('data-type'));
+    });
   });
 	
-})(jQuery);
